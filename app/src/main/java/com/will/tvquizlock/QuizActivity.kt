@@ -133,8 +133,7 @@ class QuizActivity : AppCompatActivity() {
             val labels = listOf("A", "B", "C", "D")
             val rightLabel = labels.getOrNull(q.answer) ?: ""
             val rightContent = q.options.getOrNull(q.answer) ?: ""
-            val fullExplanation = "正确答案：$rightLabel ($rightContent)
-解析：${q.explanation}"
+            val fullExplanation = "正确答案：$rightLabel ($rightContent)\\n解析：${q.explanation}"
             startPenaltyLockdown(durationMs, fullExplanation)
         }
     }
