@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B1120"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="华为智慧屏 · 学习答题守护"
+        android:textColor="#F8FAFC"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="当前状态：未开启"
+        android:textColor="#38BDF8"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tvWebInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card"
+        android:padding="16dp"
+        android:text="局域网题库与配置管理后台：正在获取IP..."
+        android:textColor="#A7F3D0"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnToggleGuard"
+            android:layout_width="240dp"
+            android:layout_height="68dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_option_btn"
+            android:focusable="true"
+            android:text="开启学习守护"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnTestQuiz"
+            android:layout_width="220dp"
+            android:layout_height="68dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_option_btn"
+            android:focusable="true"
+            android:text="立即弹题测试"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnOverlayPerm"
+            android:layout_width="240dp"
+            android:layout_height="68dp"
+            android:background="@drawable/bg_option_btn"
+            android:focusable="true"
+            android:text="检查悬浮窗权限"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:text="规则说明：开启守护后每 10 分钟自动弹出一道小学二年级题目（语/数/英）。
+答对立即继续观看；答错锁定 3 分钟并展示解析，之后换下一题直到答对为止。
+关闭守护或答题中途强制退出需验证家长密码（初始密码：4444）。"
+        android:textColor="#94A3B8"
+        android:textSize="16sp" />
+
+</LinearLayout>
