@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         btnToggleGuard.setOnClickListener {
             if (QuestionRepo.isGuardActive(this)) {
-                // 关闭守护需要验证密码 4444
+                // 关闭守护需要验证密码 5555
                 promptPasswordToStopGuard()
             } else {
                 startGuard()
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     private fun promptPasswordToStopGuard() {
         val input = EditText(this).apply {
             inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_VARIATION_PASSWORD
-            hint = "请输入家长密码（默认4444）"
+            hint = "请输入家长密码"
         }
         AlertDialog.Builder(this)
             .setTitle("关闭学习守护")
