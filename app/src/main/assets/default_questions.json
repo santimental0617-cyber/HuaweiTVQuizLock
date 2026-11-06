@@ -4,7 +4,7 @@
     "subject": "数学",
     "question": "若代数式 ax^3 + bx + 5 在 x = 2 时的值为 17，则当 x = -2 时，该代数式的值为：",
     "options": ["A. -7", "B. 7", "C. -17", "D. 12"],
-    "answer": "A",
+    "answer": 0,
     "explanation": "当 x=2 时，8a + 2b + 5 = 17，得 8a + 2b = 12，即 4a + b = 6。当 x=-2 时，-8a - 2b + 5 = -(8a + 2b) + 5 = -12 + 5 = -7。"
   },
   {
@@ -12,7 +12,7 @@
     "subject": "数学",
     "question": "已知有理数 a, b, c 在数轴上的位置且 ab > 0， a + b < 0， |a - c| = c - a，则化简 |a| + |b| - |a + b| + |c - b| 的结果为：",
     "options": ["A. 2a - 2b", "B. 2c", "C. 2b - 2a", "D. -2a"],
-    "answer": "B",
+    "answer": 1,
     "explanation": "由 ab>0 且 a+b<0 知 a<0, b<0；由 |a-c|=c-a 知 a <= c。化简各项绝对值后得结果为 2c。"
   },
   {
@@ -20,7 +20,7 @@
     "subject": "英语",
     "question": "By the time he _____ yesterday, we _____ the difficult math problem.",
     "options": ["A. arrived; have solved", "B. arrives; had solved", "C. arrived; had solved", "D. had arrived; solved"],
-    "answer": "C",
+    "answer": 2,
     "explanation": "“By the time + 过去时”引导的时间状语从句，主句通常用过去完成时（had done），表示在过去某一动作之前已经完成的动作。"
   },
   {
@@ -28,95 +28,95 @@
     "subject": "语文",
     "question": "下列各组词语中，加点字的注音全都正确的一项是：",
     "options": ["A. 酝酿（niàng） 确凿（zuó）", "B. 盔甲（kuī） 贮蓄（chù）", "C. 枯萎（wěi） 蜷伏（juán）", "D. 庇护（bì） 怂恿（sǒng）"],
-    "answer": "D",
-    "explanation": "A项“确凿”的“凿”应读 zuó（原题陷阱，凿读‘záo’）；B项“贮蓄”的“贮”应读 zhù；C项“蜷伏”的“蜷”应读 quán；D项完全正确。"
+    "answer": 3,
+    "explanation": "A项“确凿”的‘凿’读 zuó；B项“贮”读 zhù；C项“蜷”读 quán；D项完全正确。"
   },
   {
     "id": 5,
     "subject": "英语",
     "question": "---I'm afraid I can't finish the project on time. ---_____, _____!",
     "options": ["A. Take it easy; you've tried your best", "B. Never mind; it's a piece of cake", "C. Come on; you can make it", "D. Sounds good; I agree"],
-    "answer": "C",
-    "explanation": "根据语境，对方对按时完成项目感到担心和缺乏信心，应用“Come on; you can make it（加油，你能行的）”来鼓励对方。"
+    "answer": 2,
+    "explanation": "应用 “Come on; you can make it（加油，你能行的）” 来鼓励对方。"
   },
   {
     "id": 6,
     "subject": "数学",
     "question": "若方程组 { 3x + ky = 5, kx - 3y = 2 } 的解满足 x + y = 2，则常数 k 的值为：",
     "options": ["A. 1", "B. 2", "C. 3", "D. 4"],
-    "answer": "B",
+    "answer": "1",
     "explanation": "联立方程并结合 x+y=2 整体代入求解，可得 k=2。"
   },
   {
     "id": 7,
     "subject": "语文",
     "question": "下列文学常识表述不正确的一项是：",
-    "options": ["A. 《论语》是儒家经典著作，是记录孔子及其弟子言行的书。", "B. 朱自清的《春》是一篇优美的散文，抒发了对春天的赞美之情。", "C. 《世说新语》是南朝宋临川王刘义庆组织编写的志人小说集。", "D. 老舍，原名舒庆春，字舍予，代表作有小说《骆驼祥子》和话剧《茶馆》等。"],
-    "answer": "D",
-    "explanation": "D选项表述无误。本题考查对经典文学体裁的准确识别。"
+    "options": ["A. 《论语》是儒家经典著作", "B. 朱自清《春》是优美散文", "C. 《世说新语》是志人小说集", "D. 老舍《茶馆》是小说"],
+    "answer": 3,
+    "explanation": "《茶馆》是话剧剧本，不是小说，故D项表述错误。"
   },
   {
     "id": 8,
     "subject": "生物",
-    "question": "在观察洋葱鳞片叶内表皮细胞临时装片时，如果显微镜视野中出现了一个黑色边缘较粗的圆圈，轻推盖玻片该圆圈会移动，这最可能是：",
+    "question": "在观察洋葱鳞片叶内表皮细胞临时装片时，视野中出现边缘较粗的黑色圆圈，轻推盖玻片会移动，这最可能是：",
     "options": ["A. 细胞", "B. 气泡", "C. 污点", "D. 液泡"],
-    "answer": "B",
-    "explanation": "气泡在显微镜下通常表现为边缘较黑、中间发亮的圆圈，且轻压盖玻片时会发生形状改变或位置移动。"
+    "answer": 1,
+    "explanation": "气泡边缘较黑、中间发亮，且按压会移动。"
   },
   {
     "id": 9,
     "subject": "地理",
     "question": "地球自转产生的地理现象是：",
-    "options": ["A. 四季的更替", "B. 昼夜长短的变化", "C. 昼夜交替", "D. 五带的划分"],
-    "answer": "C",
-    "explanation": "地球自转产生昼夜交替现象；而四季更替、昼夜长短变化和五带划分是由地球公转引起的。"
+    "options": ["A. 四季更替", "B. 昼夜长短变化", "C. 昼夜交替", "D. 五带划分"],
+    "answer": 2,
+    "explanation": "地球自转产生昼夜交替现象。"
   },
   {
     "id": 10,
     "subject": "历史",
     "question": "“水旱从人，不知饥馑，时无荒年，天下谓之‘天府’也。”这盛赞的水利工程是：",
     "options": ["A. 都江堰", "B. 大运河", "C. 灵渠", "D. 长城"],
-    "answer": "A",
-    "explanation": "战国时期秦国蜀郡太守李冰父子在岷江流域主持修建的都江堰，使成都平原成为“天府之国”。"
+    "answer": 0,
+    "explanation": "战国时李冰父子修建的都江堰使成都平原成为天府之国。"
   },
   {
     "id": 11,
     "subject": "数学",
     "question": "计算：(-2)^2025 + (-2)^2026 的结果是：",
     "options": ["A. -2^2025", "B. 2^2025", "C. -2^2026", "D. 2^2026"],
-    "answer": "B",
-    "explanation": "提取公因式：(-2)^2025 * (1 + (-2)) = (-2)^2025 * (-1) = 2^2025。"
+    "answer": 1,
+    "explanation": "提取公因式计算得 2^2025。"
   },
   {
     "id": 12,
     "subject": "英语",
-    "question": "Neither you nor he _____ to blame for the accident. We should be careful next time.",
+    "question": "Neither you nor he _____ to blame for the accident.",
     "options": ["A. are", "B. is", "C. am", "D. be"],
-    "answer": "B",
-    "explanation": "“Neither... nor...”连接主语时，谓语动词遵循“就近原则”（靠近谁就与谁保持一致），“he”是第三人称单数，故用 is。"
+    "answer": 1,
+    "explanation": "就近原则，he 是单数，用 is。"
   },
   {
     "id": 13,
     "subject": "语文",
-    "question": "对下面诗句赏析有误的一项是：“客路青山外，行舟绿水前。潮平两岸阔，风正一帆悬。”（王湾《次北固山下》）",
-    "options": ["A. 首联先写“客路”后写“行舟”,写出了人在旅途的神态。", "B. 颔联“潮平两岸阔”展现了春潮涌涨、江面宽阔的宏大景致。", "C. 颈联“风正一帆悬”描写了顺风行船、孤帆高悬的平静优美画面。", "D. 全诗洋溢着积极向上的乐观情调，并蕴含着浓浓的乡愁。"],
-    "answer": "D",
-    "explanation": "本题无误，原诗确实既有阔大的气势又蕴含思乡之情。"
+    "question": "对诗句“潮平两岸阔，风正一帆悬”赏析有误的一项是：",
+    "options": ["A. 首联写客路行舟", "B. 颔联写春潮江阔", "C. 颈联写顺风孤帆", "D. 全诗毫无乡愁"],
+    "answer": 3,
+    "explanation": "全诗蕴含着浓浓的乡愁，D项错误。"
   },
   {
     "id": 14,
     "subject": "生物",
-    "question": "绿色植物在光下进行光合作用的原料是：",
+    "question": "绿色植物光合作用的原料是：",
     "options": ["A. 水和二氧化碳", "B. 有机物和氧气", "C. 水和氧气", "D. 有机物和二氧化碳"],
-    "answer": "A",
-    "explanation": "光合作用的原料是水和二氧化碳，产物是有机物和氧气。"
+    "answer": 0,
+    "explanation": "原料是水和二氧化碳。"
   },
   {
     "id": 15,
     "subject": "地理",
-    "question": "下列大洲中，既位于北半球又位于西半球的是：",
-    "options": ["A. 亚洲", "B. 非洲", "C. 北美洲", "D. 大洋洲"],
-    "answer": "C",
-    "explanation": "北美洲主要位于北半球和西半球。"
+    "question": "既位于北半球又位于西半球的大洲是：",
+    "options": ["A. 亚洲", "B. 非洲", "C.北美洲", "D. 大洋洲"],
+    "answer": 2,
+    "explanation": "北美洲位于北半球和西半球。"
   }
 ]
