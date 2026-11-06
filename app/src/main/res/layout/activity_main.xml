@@ -81,9 +81,9 @@
         android:layout_marginTop="32dp"
         android:gravity="center"
         android:lineSpacingExtra="6dp"
-        android:text="规则说明：开启守护后每 10 分钟自动弹出一道小学二年级题目（语/数/英）。
+        android:text="规则说明：开启守护后每 10 分钟自动弹出一道题目。
 答对立即继续观看；答错锁定 3 分钟并展示解析，之后换下一题直到答对为止。
-关闭守护或答题中途强制退出需验证家长密码（初始密码：4444）。"
+关闭守护或答题中途强制退出需验证家长密码。"
         android:textColor="#94A3B8"
         android:textSize="16sp" />
 
