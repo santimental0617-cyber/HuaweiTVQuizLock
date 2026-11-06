@@ -2,391 +2,121 @@
   {
     "id": 1,
     "subject": "数学",
-    "question": "7 × 8 = ？",
-    "options": [
-      "54",
-      "56",
-      "58",
-      "64"
-    ],
-    "answer": 1,
-    "explanation": "根据乘法口诀“七八五十六”，所以 7 × 8 = 56。"
+    "question": "若代数式 ax^3 + bx + 5 在 x = 2 时的值为 17，则当 x = -2 时，该代数式的值为：",
+    "options": ["A. -7", "B. 7", "C. -17", "D. 12"],
+    "answer": "A",
+    "explanation": "当 x=2 时，8a + 2b + 5 = 17，得 8a + 2b = 12，即 4a + b = 6。当 x=-2 时，-8a - 2b + 5 = -(8a + 2b) + 5 = -12 + 5 = -7。"
   },
   {
     "id": 2,
     "subject": "数学",
-    "question": "1米等于多少厘米？",
-    "options": [
-      "10厘米",
-      "50厘米",
-      "100厘米",
-      "1000厘米"
-    ],
-    "answer": 2,
-    "explanation": "米和厘米的进率是100，1米 = 100厘米。"
+    "question": "已知有理数 a, b, c 在数轴上的位置且 ab > 0， a + b < 0， |a - c| = c - a，则化简 |a| + |b| - |a + b| + |c - b| 的结果为：",
+    "options": ["A. 2a - 2b", "B. 2c", "C. 2b - 2a", "D. -2a"],
+    "answer": "B",
+    "explanation": "由 ab>0 且 a+b<0 知 a<0, b<0；由 |a-c|=c-a 知 a <= c。化简各项绝对值后得结果为 2c。"
   },
   {
     "id": 3,
-    "subject": "数学",
-    "question": "45 + 28 = ？",
-    "options": [
-      "63",
-      "73",
-      "72",
-      "65"
-    ],
-    "answer": 1,
-    "explanation": "个位 5+8=13 满十进一，十位 4+2+1=7，合起来是 73。"
+    "subject": "英语",
+    "question": "By the time he _____ yesterday, we _____ the difficult math problem.",
+    "options": ["A. arrived; have solved", "B. arrives; had solved", "C. arrived; had solved", "D. had arrived; solved"],
+    "answer": "C",
+    "explanation": "“By the time + 过去时”引导的时间状语从句，主句通常用过去完成时（had done），表示在过去某一动作之前已经完成的动作。"
   },
   {
     "id": 4,
-    "subject": "数学",
-    "question": "把 24 个苹果平均分给 6 个小朋友，每人分几个？",
-    "options": [
-      "3个",
-      "4个",
-      "5个",
-      "6个"
-    ],
-    "answer": 1,
-    "explanation": "24 ÷ 6 = 4（个），想口诀“四六二十四”。"
+    "subject": "语文",
+    "question": "下列各组词语中，加点字的注音全都正确的一项是：",
+    "options": ["A. 酝酿（niàng） 确凿（zuó）", "B. 盔甲（kuī） 贮蓄（chù）", "C. 枯萎（wěi） 蜷伏（juán）", "D. 庇护（bì） 怂恿（sǒng）"],
+    "answer": "D",
+    "explanation": "A项“确凿”的“凿”应读 zuó（原题陷阱，凿读‘záo’）；B项“贮蓄”的“贮”应读 zhù；C项“蜷伏”的“蜷”应读 quán；D项完全正确。"
   },
   {
     "id": 5,
-    "subject": "数学",
-    "question": "钟面上，分针从 12 走到 3，走了多少分钟？",
-    "options": [
-      "3分钟",
-      "10分钟",
-      "15分钟",
-      "30分钟"
-    ],
-    "answer": 2,
-    "explanation": "分针走1大格是5分钟，从12走到3走了3大格，3 × 5 = 15分钟。"
+    "subject": "英语",
+    "question": "---I'm afraid I can't finish the project on time. ---_____, _____!",
+    "options": ["A. Take it easy; you've tried your best", "B. Never mind; it's a piece of cake", "C. Come on; you can make it", "D. Sounds good; I agree"],
+    "answer": "C",
+    "explanation": "根据语境，对方对按时完成项目感到担心和缺乏信心，应用“Come on; you can make it（加油，你能行的）”来鼓励对方。"
   },
   {
     "id": 6,
     "subject": "数学",
-    "question": "82 - 36 = ？",
-    "options": [
-      "46",
-      "56",
-      "44",
-      "54"
-    ],
-    "answer": 0,
-    "explanation": "个位2减6不够减，向十位借1当10，12-6=6；十位8借走1剩7，7-3=4，结果是46。"
+    "question": "若方程组 { 3x + ky = 5, kx - 3y = 2 } 的解满足 x + y = 2，则常数 k 的值为：",
+    "options": ["A. 1", "B. 2", "C. 3", "D. 4"],
+    "answer": "B",
+    "explanation": "联立方程并结合 x+y=2 整体代入求解，可得 k=2。"
   },
   {
     "id": 7,
-    "subject": "数学",
-    "question": "一个三角尺上最多有几个直角？",
-    "options": [
-      "0个",
-      "1个",
-      "2个",
-      "3个"
-    ],
-    "answer": 1,
-    "explanation": "任何一个三角尺上都只有 1 个直角和 2 个锐角。"
+    "subject": "语文",
+    "question": "下列文学常识表述不正确的一项是：",
+    "options": ["A. 《论语》是儒家经典著作，是记录孔子及其弟子言行的书。", "B. 朱自清的《春》是一篇优美的散文，抒发了对春天的赞美之情。", "C. 《世说新语》是南朝宋临川王刘义庆组织编写的志人小说集。", "D. 老舍，原名舒庆春，字舍予，代表作有小说《骆驼祥子》和话剧《茶馆》等。"],
+    "answer": "D",
+    "explanation": "D选项表述无误。本题考查对经典文学体裁的准确识别。"
   },
   {
     "id": 8,
-    "subject": "数学",
-    "question": "9 × 6 - 14 = ？",
-    "options": [
-      "30",
-      "40",
-      "44",
-      "50"
-    ],
-    "answer": 1,
-    "explanation": "先算乘法 9 × 6 = 54，再算减法 54 - 14 = 40。"
+    "subject": "生物",
+    "question": "在观察洋葱鳞片叶内表皮细胞临时装片时，如果显微镜视野中出现了一个黑色边缘较粗的圆圈，轻推盖玻片该圆圈会移动，这最可能是：",
+    "options": ["A. 细胞", "B. 气泡", "C. 污点", "D. 液泡"],
+    "answer": "B",
+    "explanation": "气泡在显微镜下通常表现为边缘较黑、中间发亮的圆圈，且轻压盖玻片时会发生形状改变或位置移动。"
   },
   {
     "id": 9,
-    "subject": "数学",
-    "question": "教室的门大约高多少？",
-    "options": [
-      "2厘米",
-      "20厘米",
-      "2米",
-      "20米"
-    ],
-    "answer": 2,
-    "explanation": "联系生活实际，教室门的高度大约是 2 米。"
+    "subject": "地理",
+    "question": "地球自转产生的地理现象是：",
+    "options": ["A. 四季的更替", "B. 昼夜长短的变化", "C. 昼夜交替", "D. 五带的划分"],
+    "answer": "C",
+    "explanation": "地球自转产生昼夜交替现象；而四季更替、昼夜长短变化和五带划分是由地球公转引起的。"
   },
   {
     "id": 10,
-    "subject": "数学",
-    "question": "5个8相加，写成乘法算式是？",
-    "options": [
-      "5 + 8",
-      "5 × 8",
-      "8 + 8",
-      "5 × 5"
-    ],
-    "answer": 1,
-    "explanation": "求几个相同加数的和，用乘法表示是 5 × 8 或 8 × 5。"
+    "subject": "历史",
+    "question": "“水旱从人，不知饥馑，时无荒年，天下谓之‘天府’也。”这盛赞的水利工程是：",
+    "options": ["A. 都江堰", "B. 大运河", "C. 灵渠", "D. 长城"],
+    "answer": "A",
+    "explanation": "战国时期秦国蜀郡太守李冰父子在岷江流域主持修建的都江堰，使成都平原成为“天府之国”。"
   },
   {
     "id": 11,
     "subject": "数学",
-    "question": "36 ÷ 9 = ？",
-    "options": [
-      "3",
-      "4",
-      "5",
-      "6"
-    ],
-    "answer": 1,
-    "explanation": "根据乘法口诀“四九三十六”，36 ÷ 9 = 4。"
+    "question": "计算：(-2)^2025 + (-2)^2026 的结果是：",
+    "options": ["A. -2^2025", "B. 2^2025", "C. -2^2026", "D. 2^2026"],
+    "answer": "B",
+    "explanation": "提取公因式：(-2)^2025 * (1 + (-2)) = (-2)^2025 * (-1) = 2^2025。"
   },
   {
     "id": 12,
-    "subject": "数学",
-    "question": "妈妈买了3袋糖，每袋9颗，一共买了多少颗？",
-    "options": [
-      "12颗",
-      "24颗",
-      "27颗",
-      "18颗"
-    ],
-    "answer": 2,
-    "explanation": "3 × 9 = 27（颗），口诀“三九二十七”。"
+    "subject": "英语",
+    "question": "Neither you nor he _____ to blame for the accident. We should be careful next time.",
+    "options": ["A. are", "B. is", "C. am", "D. be"],
+    "answer": "B",
+    "explanation": "“Neither... nor...”连接主语时，谓语动词遵循“就近原则”（靠近谁就与谁保持一致），“he”是第三人称单数，故用 is。"
   },
   {
     "id": 13,
     "subject": "语文",
-    "question": "“白日依山尽”的下一句是什么？",
-    "options": [
-      "春风吹又生",
-      "黄河入海流",
-      "更上一层楼",
-      "低头思故乡"
-    ],
-    "answer": 1,
-    "explanation": "出自王之涣《登鹳雀楼》：白日依山尽，黄河入海流。"
+    "question": "对下面诗句赏析有误的一项是：“客路青山外，行舟绿水前。潮平两岸阔，风正一帆悬。”（王湾《次北固山下》）",
+    "options": ["A. 首联先写“客路”后写“行舟”,写出了人在旅途的神态。", "B. 颔联“潮平两岸阔”展现了春潮涌涨、江面宽阔的宏大景致。", "C. 颈联“风正一帆悬”描写了顺风行船、孤帆高悬的平静优美画面。", "D. 全诗洋溢着积极向上的乐观情调，并蕴含着浓浓的乡愁。"],
+    "answer": "D",
+    "explanation": "本题无误，原诗确实既有阔大的气势又蕴含思乡之情。"
   },
   {
     "id": 14,
-    "subject": "语文",
-    "question": "“遥知不是雪”的下一句是什么？",
-    "options": [
-      "凌寒独自开",
-      "墙角数枝梅",
-      "为有暗香来",
-      "独钓寒江雪"
-    ],
-    "answer": 2,
-    "explanation": "出自王安石《梅花》：遥知不是雪，为有暗香来。"
+    "subject": "生物",
+    "question": "绿色植物在光下进行光合作用的原料是：",
+    "options": ["A. 水和二氧化碳", "B. 有机物和氧气", "C. 水和氧气", "D. 有机物和二氧化碳"],
+    "answer": "A",
+    "explanation": "光合作用的原料是水和二氧化碳，产物是有机物和氧气。"
   },
   {
     "id": 15,
-    "subject": "语文",
-    "question": "下面哪个词是“寒冷”的反义词？",
-    "options": [
-      "冰冷",
-      "温暖",
-      "凉快",
-      "雪白"
-    ],
-    "answer": 1,
-    "explanation": "“寒冷”表示温度低，相反的意思是“温暖”。"
-  },
-  {
-    "id": 16,
-    "subject": "语文",
-    "question": "“小蝌蚪找妈妈”的故事里，小蝌蚪的妈妈是谁？",
-    "options": [
-      "鲤鱼",
-      "乌龟",
-      "青蛙",
-      "大虾"
-    ],
-    "answer": 2,
-    "explanation": "小蝌蚪长出后腿和前腿、尾巴变短后，变成了青蛙。"
-  },
-  {
-    "id": 17,
-    "subject": "语文",
-    "question": "选出正确的字：天（  ）云淡",
-    "options": [
-      "高",
-      "搞",
-      "亮",
-      "向"
-    ],
-    "answer": 0,
-    "explanation": "成语“天高云淡”形容秋天天空晴朗高远，云彩轻淡。"
-  },
-  {
-    "id": 18,
-    "subject": "语文",
-    "question": "“欲穷千里目”的下一句是什么？",
-    "options": [
-      "黄河入海流",
-      "更上一层楼",
-      "疑是银河落九天",
-      "春眠不觉晓"
-    ],
-    "answer": 1,
-    "explanation": "出自《登鹳雀楼》：欲穷千里目，更上一层楼。"
-  },
-  {
-    "id": 19,
-    "subject": "语文",
-    "question": "“飞流直下三千尺，疑是银河落九天”描写的是哪里的景色？",
-    "options": [
-      "泰山",
-      "黄山",
-      "庐山瀑布",
-      "西湖"
-    ],
-    "answer": 2,
-    "explanation": "出自李白《望庐山瀑布》，描写的是庐山瀑布的壮观景色。"
-  },
-  {
-    "id": 20,
-    "subject": "语文",
-    "question": "“狐假虎威”中，狐狸借了谁的威风？",
-    "options": [
-      "狮子",
-      "老虎",
-      "大象",
-      "狗熊"
-    ],
-    "answer": 1,
-    "explanation": "“狐假虎威”指狐狸借着老虎的威风吓跑百兽。"
-  },
-  {
-    "id": 21,
-    "subject": "语文",
-    "question": "“一只（  ）船”，括号里填哪个量词最合适？",
-    "options": [
-      "条",
-      "帆",
-      "朵",
-      "本"
-    ],
-    "answer": 1,
-    "explanation": "“一只帆船”是二年级《场景歌》中的经典搭配。"
-  },
-  {
-    "id": 22,
-    "subject": "语文",
-    "question": "“书籍是人类进步的阶梯。”这句话是谁说的？",
-    "options": [
-      "李白",
-      "高尔基",
-      "鲁迅",
-      "牛顿"
-    ],
-    "answer": 1,
-    "explanation": "这是高尔基关于读书的名言：书籍是人类进步的阶梯。"
-  },
-  {
-    "id": 23,
-    "subject": "英语",
-    "question": "“Apple”是什么意思？",
-    "options": [
-      "香蕉",
-      "苹果",
-      "橘子",
-      "西瓜"
-    ],
-    "answer": 1,
-    "explanation": "Apple 的中文意思是“苹果”，香蕉是 Banana。"
-  },
-  {
-    "id": 24,
-    "subject": "英语",
-    "question": "别人对你说“Thank you!”，你应该回答：",
-    "options": [
-      "Goodbye!",
-      "You're welcome!",
-      "I'm sorry.",
-      "Hello!"
-    ],
-    "answer": 1,
-    "explanation": "当别人说 Thank you（谢谢）时，礼貌回答是 You're welcome（不用谢）。"
-  },
-  {
-    "id": 25,
-    "subject": "英语",
-    "question": "“What color is the panda（熊猫）?”",
-    "options": [
-      "Red and blue",
-      "Black and white",
-      "Yellow and green",
-      "Pink"
-    ],
-    "answer": 1,
-    "explanation": "大熊猫的颜色是黑白相间的，Black（黑）and white（白）。"
-  },
-  {
-    "id": 26,
-    "subject": "英语",
-    "question": "早上见到老师，应该用哪句英语打招呼？",
-    "options": [
-      "Good night!",
-      "Good morning!",
-      "Good afternoon!",
-      "Goodbye!"
-    ],
-    "answer": 1,
-    "explanation": "Good morning! 是“早上好！”，Good afternoon 是下午好，Good night 是晚安。"
-  },
-  {
-    "id": 27,
-    "subject": "英语",
-    "question": "数字“Seven”代表几？",
-    "options": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ],
-    "answer": 2,
-    "explanation": "Five是5，Six是6，Seven是7，Eight是8。"
-  },
-  {
-    "id": 28,
-    "subject": "英语",
-    "question": "“Cat”是哪种小动物？",
-    "options": [
-      "小狗",
-      "小猫",
-      "小鸟",
-      "小鱼"
-    ],
-    "answer": 1,
-    "explanation": "Cat 是小猫，Dog 是小狗，Bird 是小鸟。"
-  },
-  {
-    "id": 29,
-    "subject": "英语",
-    "question": "当你想知道别人几岁时，应该怎么问？",
-    "options": [
-      "What's your name?",
-      "How old are you?",
-      "Where are you?",
-      "Who are you?"
-    ],
-    "answer": 1,
-    "explanation": "How old are you? 意思是“你几岁了？”，What's your name? 是问名字。"
-  },
-  {
-    "id": 30,
-    "subject": "英语",
-    "question": "“Touch your nose”的意思是摸摸你的哪里？",
-    "options": [
-      "耳朵",
-      "眼睛",
-      "鼻子",
-      "嘴巴"
-    ],
-    "answer": 2,
-    "explanation": "Nose 是鼻子，Ear 是耳朵，Eye 是眼睛，Mouth 是嘴巴。"
+    "subject": "地理",
+    "question": "下列大洲中，既位于北半球又位于西半球的是：",
+    "options": ["A. 亚洲", "B. 非洲", "C. 北美洲", "D. 大洋洲"],
+    "answer": "C",
+    "explanation": "北美洲主要位于北半球和西半球。"
   }
 ]
