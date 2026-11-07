@@ -24,6 +24,7 @@ object QuestionRepo {
     private const val KEY_GUARD_ACTIVE = "guard_active"
     private const val KEY_LOCKED_IN_QUIZ = "locked_in_quiz"
     private const val KEY_PENALTY_END_TIME = "penalty_end_time"
+    private const val KEY_GUARD_TIMER_STARTED_AT = "guard_timer_started_at"
 
     fun getPassword(context: Context): String {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -37,7 +38,7 @@ object QuestionRepo {
 
     fun getIntervalMinutes(context: Context): Int {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        return prefs.getInt(KEY_INTERVAL_MIN, 10)
+        return prefs.getInt(KEY_INTERVAL_MIN, 1)
     }
 
     fun setIntervalMinutes(context: Context, minutes: Int) {
@@ -84,6 +85,18 @@ object QuestionRepo {
         context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
             .edit()
             .putLong(KEY_PENALTY_END_TIME, timestampMs)
+            .apply()
+    }
+
+    fun getGuardTimerStartedAt(context: Context): Long {
+        return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .getLong(KEY_GUARD_TIMER_STARTED_AT, 0L)
+    }
+
+    fun setGuardTimerStartedAt(context: Context, timestampMs: Long) {
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .putLong(KEY_GUARD_TIMER_STARTED_AT, timestampMs)
             .apply()
     }
 

@@ -15,6 +15,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ class QuizActivity : AppCompatActivity() {
 
     private lateinit var tvSubjectBadge: TextView
     private lateinit var tvQuestion: TextView
+    private lateinit var scrollQuizContent: ScrollView
     private lateinit var btnOpts: List<Button>
     private lateinit var layoutPenalty: LinearLayout
     private lateinit var tvPenaltyTimer: TextView
@@ -59,6 +61,7 @@ class QuizActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_quiz)
 
+        scrollQuizContent = findViewById(R.id.scrollQuizContent)
         tvSubjectBadge = findViewById(R.id.tvSubjectBadge)
         tvQuestion = findViewById(R.id.tvQuestion)
         btnOpts = listOf(
@@ -162,6 +165,9 @@ class QuizActivity : AppCompatActivity() {
         }
         layoutPenalty.visibility = View.VISIBLE
         tvExplanation.text = explanationText
+        layoutPenalty.post {
+            scrollQuizContent.smoothScrollTo(0, layoutPenalty.bottom)
+        }
 
         penaltyTimer?.cancel()
         penaltyTimer = object : CountDownTimer(durationMs, 1000L) {
@@ -184,7 +190,7 @@ class QuizActivity : AppCompatActivity() {
         penaltyTimer?.cancel()
         QuestionRepo.setPenaltyEndTime(this, 0L)
         QuestionRepo.setLockedInQuiz(this, false)
-        // 通知后台服务重新开始新的一轮 10 分钟计时
+        // 通知后台服务按当前设置重新开始计时
         val resetIntent = Intent(this, GuardService::class.java).apply {
             action = GuardService.ACTION_RESET_TIMER
         }
@@ -203,7 +209,7 @@ class QuizActivity : AppCompatActivity() {
     private fun showParentPasswordDialog() {
         val input = EditText(this).apply {
             inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_VARIATION_PASSWORD
-            hint = "请输入家长密码（默认5555）"
+            hint = "请输入家长密码"
         }
         AlertDialog.Builder(this)
             .setTitle("家长密码验证")
@@ -221,6 +227,7 @@ class QuizActivity : AppCompatActivity() {
                     QuestionRepo.setGuardActive(this, false)
                     QuestionRepo.setLockedInQuiz(this, false)
                     QuestionRepo.setPenaltyEndTime(this, 0L)
+                    QuestionRepo.setGuardTimerStartedAt(this, 0L)
                     stopService(Intent(this, GuardService::class.java))
                     finish()
                 } else {

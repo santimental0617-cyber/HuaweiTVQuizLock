@@ -11,17 +11,19 @@ import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.util.Log
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.NotificationCompat
 
 class GuardService : Service() {
 
     private val handler = Handler(Looper.getMainLooper())
     private var webServer: WebServer? = null
-    private var secondsElapsed = 0
 
     private val tickRunnable = object : Runnable {
         override fun run() {
             if (!QuestionRepo.isGuardActive(this@GuardService)) {
+                QuestionRepo.setGuardTimerStartedAt(this@GuardService, 0L)
                 stopSelf()
                 return
             }
@@ -32,10 +34,16 @@ class GuardService : Service() {
                     launchQuizNow(this@GuardService)
                 }
             } else {
-                secondsElapsed++
-                val targetSeconds = QuestionRepo.getIntervalMinutes(this@GuardService) * 60
-                if (secondsElapsed >= targetSeconds) {
-                    secondsElapsed = 0
+                val now = System.currentTimeMillis()
+                var timerStartedAt = QuestionRepo.getGuardTimerStartedAt(this@GuardService)
+                if (timerStartedAt == 0L) {
+                    timerStartedAt = now
+                    QuestionRepo.setGuardTimerStartedAt(this@GuardService, timerStartedAt)
+                }
+                val intervalMs = QuestionRepo.getIntervalMinutes(this@GuardService) * 60_000L
+                if (now - timerStartedAt >= intervalMs) {
+                    QuestionRepo.setGuardTimerStartedAt(this@GuardService, now)
+                    Log.i(TAG, "Quiz interval reached; launching quiz reminder")
                     launchQuizNow(this@GuardService)
                 }
             }
@@ -55,7 +63,9 @@ class GuardService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent?.action == ACTION_RESET_TIMER) {
-            secondsElapsed = 0
+            QuestionRepo.setGuardTimerStartedAt(this, System.currentTimeMillis())
+        } else if (QuestionRepo.getGuardTimerStartedAt(this) == 0L) {
+            QuestionRepo.setGuardTimerStartedAt(this, System.currentTimeMillis())
         }
         handler.removeCallbacksAndMessages(null)
         handler.post(tickRunnable)
@@ -93,14 +103,11 @@ class GuardService : Service() {
 
     companion object {
         const val ACTION_RESET_TIMER = "com.will.tvquizlock.RESET_TIMER"
-        private const val ALERT_CHANNEL_ID = "quiz_time_up_alert"
+        const val ALERT_CHANNEL_ID = "quiz_time_up_alert"
         private const val ALERT_NOTIFICATION_ID = 2001
+        private const val TAG = "GuardService"
 
-        fun launchQuizNow(context: Context) {
-            QuestionRepo.setLockedInQuiz(context, true)
-
-            // 1. 创建高优先级通知渠道（必须为 HIGH/MAX 才能产生全屏唤醒）
-            val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        fun ensureAlertNotificationChannel(context: Context) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val channel = NotificationChannel(
                     ALERT_CHANNEL_ID,
@@ -110,10 +117,18 @@ class GuardService : Service() {
                     description = "时间到期时全屏拉起做题界面"
                     setBypassDnd(true)
                 }
+                val notificationManager =
+                    context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 notificationManager.createNotificationChannel(channel)
             }
+        }
 
-            // 2. 构建目标页面的全屏 Intent
+        fun launchQuizNow(context: Context) {
+            QuestionRepo.setLockedInQuiz(context, true)
+
+            ensureAlertNotificationChannel(context)
+            val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
             val intent = Intent(context, QuizActivity::class.java).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
             }
@@ -131,7 +146,6 @@ class GuardService : Service() {
                 pendingIntentFlags
             )
 
-            // 3. 构建高优先级全屏通知
             val notification = NotificationCompat.Builder(context, ALERT_CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.ic_lock_idle_alarm)
                 .setContentTitle("答题时间已到")
@@ -142,12 +156,23 @@ class GuardService : Service() {
                 .setFullScreenIntent(fullScreenPendingIntent, true)
                 .build()
 
-            // 4. 发送通知唤起界面（双重保障：先尝试普通拉起，再触发全屏通知）
+            // Post the full-screen notification first; background activity launches may be blocked.
+            try {
+                if (NotificationManagerCompat.from(context).areNotificationsEnabled()) {
+                    notificationManager.notify(ALERT_NOTIFICATION_ID, notification)
+                } else {
+                    Log.e(TAG, "Cannot show quiz reminder: app notifications are disabled")
+                }
+            } catch (e: SecurityException) {
+                Log.e(TAG, "Cannot post quiz reminder notification", e)
+            }
+
             try {
                 context.startActivity(intent)
-            } catch (_: Exception) {}
-
-            notificationManager.notify(ALERT_NOTIFICATION_ID, notification)
+            } catch (e: Exception) {
+                Log.w(TAG, "Direct quiz launch was blocked; relying on the full-screen notification", e)
+            }
         }
+
     }
 }

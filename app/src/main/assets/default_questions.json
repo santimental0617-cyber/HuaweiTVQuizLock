@@ -44,7 +44,7 @@
     "subject": "数学",
     "question": "若方程组 { 3x + ky = 5, kx - 3y = 2 } 的解满足 x + y = 2，则常数 k 的值为：",
     "options": ["1", "2", "3", "4"],
-    "answer": "1",
+    "answer": 1,
     "explanation": "联立方程并结合 x+y=2 整体代入求解，可得 k=2。"
   },
   {

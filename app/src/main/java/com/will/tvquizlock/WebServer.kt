@@ -31,7 +31,7 @@ class WebServer(private val context: Context, port: Int = 8888) : NanoHTTPD(port
                 }
                 "/api/save_settings" -> {
                     val pwd = params["password"]?.firstOrNull()?.trim()?.takeIf { it.isNotEmpty() } ?: "5555"
-                    val interval = params["interval"]?.firstOrNull()?.toIntOrNull() ?: 10
+                    val interval = params["interval"]?.firstOrNull()?.toIntOrNull() ?: 1
                     val penalty = params["penalty"]?.firstOrNull()?.toIntOrNull() ?: 180
                     QuestionRepo.setPassword(context, pwd)
                     QuestionRepo.setIntervalMinutes(context, interval)
@@ -90,7 +90,7 @@ class WebServer(private val context: Context, port: Int = 8888) : NanoHTTPD(port
                     <h2>规则与密码设置</h2>
                     <label>家长退出密码（默认 5555）：</label>
                     <input id="pwd" type="text" value="$currentPwd" />
-                    <label>弹题间隔时间（分钟，默认 10 分钟）：</label>
+                    <label>弹题间隔时间（分钟，默认 1 分钟，测试用）：</label>
                     <input id="interval" type="number" value="$currentInterval" />
                     <label>答错惩罚锁定时间（秒，默认 180 秒即 3 分钟）：</label>
                     <input id="penalty" type="number" value="$currentPenalty" />
