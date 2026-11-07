@@ -102,7 +102,7 @@ class QuizActivity : AppCompatActivity() {
         val q = QuestionRepo.getRandomQuestion(this, currentQuestion?.id ?: -1)
         currentQuestion = q
 
-        tvSubjectBadge.text = "【${q.subject}】小学二年级闯关"
+        tvSubjectBadge.text = "【${q.subject}】加油闯关"
         tvQuestion.text = q.question
 
         val labels = listOf("A", "B", "C", "D")
