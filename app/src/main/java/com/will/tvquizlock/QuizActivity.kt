@@ -11,6 +11,7 @@ import android.os.CountDownTimer
 import android.text.InputType
 import android.view.KeyEvent
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -41,6 +42,21 @@ class QuizActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 允许穿透锁屏/屏保并点亮屏幕
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+            setShowWhenLocked(true)
+            setTurnScreenOn(true)
+        } else {
+            @Suppress("DEPRECATION")
+            window.addFlags(
+                WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or
+                WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+            )
+        }
+        // 保持屏幕常亮，防止答题过程中电视自动进入屏保
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         setContentView(R.layout.activity_quiz)
 
         tvSubjectBadge = findViewById(R.id.tvSubjectBadge)
@@ -133,7 +149,7 @@ class QuizActivity : AppCompatActivity() {
             val labels = listOf("A", "B", "C", "D")
             val rightLabel = labels.getOrNull(q.answer) ?: ""
             val rightContent = q.options.getOrNull(q.answer) ?: ""
-            val fullExplanation = "正确答案：$rightLabel ($rightContent)\\n解析：${q.explanation}"
+            val fullExplanation = "正确答案：$rightLabel ($rightContent)\n解析：${q.explanation}"
             startPenaltyLockdown(durationMs, fullExplanation)
         }
     }
