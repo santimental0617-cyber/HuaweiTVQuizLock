@@ -203,7 +203,7 @@ class QuizActivity : AppCompatActivity() {
     private fun showParentPasswordDialog() {
         val input = EditText(this).apply {
             inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_VARIATION_PASSWORD
-            hint = "请输入家长密码（默认4444）"
+            hint = "请输入家长密码（默认5555）"
         }
         AlertDialog.Builder(this)
             .setTitle("家长密码验证")

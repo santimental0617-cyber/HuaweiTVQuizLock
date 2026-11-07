@@ -41,7 +41,6 @@ class GuardService : Service() {
             }
 
             handler.postDelayed(this, 2000L)
-            secondsElapsed++ // 步进补偿（每次循环2秒）
         }
     }
 

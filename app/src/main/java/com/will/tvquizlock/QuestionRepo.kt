@@ -114,6 +114,18 @@ object QuestionRepo {
             if (!obj.has("question") || !obj.has("options") || !obj.has("answer")) {
                 throw IllegalArgumentException("第 ${i + 1} 题缺少必填字段 (question/options/answer)")
             }
+
+            val questionText = obj.optString("question", "").trim()
+            val optionsArray = obj.optJSONArray("options")
+            val answerIndex = obj.optInt("answer", -1)
+            require(questionText.isNotEmpty()) { "第 ${i + 1} 题题目不能为空" }
+            require(optionsArray != null && optionsArray.length() == 4) { "第 ${i + 1} 题必须包含 4 个选项" }
+            require(answerIndex in 0..3) { "第 ${i + 1} 题 answer 必须为 0-3 的整数索引" }
+
+            for (j in 0 until optionsArray.length()) {
+                val optionText = optionsArray.getString(j).trim()
+                require(optionText.isNotEmpty()) { "第 ${i + 1} 题的第 ${j + 1} 个选项不能为空" }
+            }
         }
         File(context.filesDir, CUSTOM_FILE).writeText(arr.toString(2), Charsets.UTF_8)
         return arr.length()

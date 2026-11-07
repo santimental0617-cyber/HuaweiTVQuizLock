@@ -30,7 +30,7 @@ class WebServer(private val context: Context, port: Int = 8888) : NanoHTTPD(port
                     return newFixedLengthResponse(Response.Status.OK, "text/plain; charset=utf-8", "已恢复默认二年级内置题库！")
                 }
                 "/api/save_settings" -> {
-                    val pwd = params["password"]?.firstOrNull() ?: "4444"
+                    val pwd = params["password"]?.firstOrNull()?.trim()?.takeIf { it.isNotEmpty() } ?: "5555"
                     val interval = params["interval"]?.firstOrNull()?.toIntOrNull() ?: 10
                     val penalty = params["penalty"]?.firstOrNull()?.toIntOrNull() ?: 180
                     QuestionRepo.setPassword(context, pwd)
@@ -88,7 +88,7 @@ class WebServer(private val context: Context, port: Int = 8888) : NanoHTTPD(port
 
                 <div class="card">
                     <h2>规则与密码设置</h2>
-                    <label>家长退出密码（默认 4444）：</label>
+                    <label>家长退出密码（默认 5555）：</label>
                     <input id="pwd" type="text" value="$currentPwd" />
                     <label>弹题间隔时间（分钟，默认 10 分钟）：</label>
                     <input id="interval" type="number" value="$currentInterval" />

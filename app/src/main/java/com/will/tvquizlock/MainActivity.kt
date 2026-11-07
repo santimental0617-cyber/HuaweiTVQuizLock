@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
             Toast.makeText(this, "请先开启“显示在其他应用上层”悬浮窗权限，确保看视频时能正常弹题", Toast.LENGTH_LONG).show()
             requestOverlayPermission()
+            return
         }
         QuestionRepo.setGuardActive(this, true)
         val serviceIntent = Intent(this, GuardService::class.java)
