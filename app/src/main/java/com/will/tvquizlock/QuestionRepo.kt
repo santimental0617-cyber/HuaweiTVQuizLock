@@ -27,7 +27,7 @@ object QuestionRepo {
 
     fun getPassword(context: Context): String {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        return prefs.getString(KEY_PASSWORD, "4444") ?: "4444"
+        return prefs.getString(KEY_PASSWORD, "5555") ?: "5555"
     }
 
     fun setPassword(context: Context, pwd: String) {
@@ -80,21 +80,24 @@ object QuestionRepo {
             .getLong(KEY_PENALTY_END_TIME, 0L)
     }
 
-    fun setPenaltyEndTime(context: Context, timestampMs: Long) {
-        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-            .edit().putLong(KEY_PENALTY_END_TIME, timestampMs).apply()
-    }
-
     fun loadQuestionsJsonString(context: Context): String {
         val customFile = File(context.filesDir, CUSTOM_FILE)
         if (customFile.exists()) {
             try {
                 val content = customFile.readText(Charsets.UTF_8)
-                if (JSONArray(content).length() > 0) return content
-            } catch (_: Exception) {}
+                if (JSONArray(content).length() > 0) {
+                    return content
+                }
+            } catch (_: Exception) {
+                // 如果本地缓存文件损坏或格式不对，直接删掉它，防止无限闪退或读取旧题！
+                customFile.delete()
+            }
         }
-        return context.assets.open("default_questions.json").bufferedReader(Charsets.UTF_8).use { it.readText() }
-    }
+        return context.assets.open("default_questions.json")
+            .bufferedReader(Charsets.UTF_8).use { 
+                it.readText() 
+            }
+    } 
 
     fun saveCustomQuestionsJson(context: Context, jsonStr: String): Int {
         val arr = JSONArray(jsonStr)
