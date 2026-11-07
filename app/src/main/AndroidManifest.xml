@@ -9,7 +9,8 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> 
+    
     <uses-feature
         android:name="android.software.leanback"
         android:required="false" />
@@ -41,6 +42,9 @@
             android:launchMode="singleInstance"
             android:excludeFromRecents="true"
             android:screenOrientation="landscape"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:showOnLockScreen="true"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <service
