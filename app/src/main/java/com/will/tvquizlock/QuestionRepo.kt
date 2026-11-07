@@ -80,6 +80,13 @@ object QuestionRepo {
             .getLong(KEY_PENALTY_END_TIME, 0L)
     }
 
+    fun setPenaltyEndTime(context: Context, timestampMs: Long) {
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .putLong(KEY_PENALTY_END_TIME, timestampMs)
+            .apply()
+    }
+
     fun loadQuestionsJsonString(context: Context): String {
         val customFile = File(context.filesDir, CUSTOM_FILE)
         if (customFile.exists()) {
